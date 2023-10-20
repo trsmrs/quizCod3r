@@ -30,6 +30,14 @@ export default class AnswersModel {
     }
 
 
+    toObject() {
+        return {
+            value: this.#value,
+            correct: this.#correct,
+            revealed: this.#revealed
+        }
+    }
+
 
 }
 

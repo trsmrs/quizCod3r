@@ -1,5 +1,5 @@
 import AnswersModel from "./answer"
-
+import { Randomize } from "@/functions/arrays"
 export default class QuestionModel {
     #id: number
     #statement: string
@@ -38,11 +38,30 @@ export default class QuestionModel {
     }
 
 
+    answerWith(index: number): QuestionModel {
+        const acertou = this.#answers[index]?.correct
+        const newAnswers = this.#answers.map((res, i) => {
+            const selectedRes = index === i
+            const mustReveal = selectedRes || res.correct
+            return mustReveal ? res.revelar() : res
+        })
+
+        return new QuestionModel(this.id, this.statement, newAnswers, acertou)
+    }
+
+
+    randomizeAnswers(): QuestionModel {
+        let randomizedAnswers = Randomize(this.#answers)
+        return new QuestionModel(this.#id, this.#statement, randomizedAnswers, this.#acertou)
+    }
+
+
     toObject() {
         return {
             id: this.#id,
             statement: this.#statement,
             answers: this.#answers.map(res => res.toObject()),
+            respondida: this.respondida,
             acertou: this.#acertou,
         }
     }

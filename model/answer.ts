@@ -30,6 +30,13 @@ export default class AnswersModel {
     }
 
 
+    revelar(){
+        return new AnswersModel(this.#value, this.#correct, true)
+    }
+
+
+
+
     toObject() {
         return {
             value: this.#value,

@@ -48,6 +48,7 @@ export default function Result() {
                 <Statistics text={'Percentual'} value={percent}
                     colorFont='#FFF'
                     BgColor={colorP}
+                    subText='%'
                 />
             </div>
             <Button href='/' text='Tentar Novamente' />

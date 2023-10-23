@@ -3,6 +3,7 @@ import style from '@/styles/Statistics.module.css'
 interface StatisticsProps {
     value: number
     text: string
+    subText?: string
     BgColor?: string
     colorFont?: string
 }
@@ -17,10 +18,14 @@ export default function Statistics(props: StatisticsProps) {
                     color: props.colorFont ?? '#333'
                 }}>
                     {props.value}
+                    <span className={style.subText}>
+                        {props.subText}
+                    </span>
             </div>
                     <div className={style.text}>
                         {props.text}
                     </div>
+
         </div>
     )
 }

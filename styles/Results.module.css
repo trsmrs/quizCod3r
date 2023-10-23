@@ -1,0 +1,15 @@
+.results {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+}
+
+.results h1 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}

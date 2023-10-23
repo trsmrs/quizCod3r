@@ -1,3 +1,5 @@
+import QuestionModel from "./question"
+
 export default class AnswersModel {
     #value: string
     #correct: boolean
@@ -30,10 +32,14 @@ export default class AnswersModel {
     }
 
 
-    revelar(){
+    revelar() {
         return new AnswersModel(this.#value, this.#correct, true)
     }
 
+
+    static createFromObject(obj: AnswersModel): AnswersModel {
+        return new AnswersModel(obj.value, obj.correct, obj.revealed)
+    }
 
 
 

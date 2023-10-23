@@ -1,4 +1,4 @@
-import questions from '../questions/dbQuestions'
+import questions from '../dbQuestions'
 
 export default (req: any, res: any) => {
     const idSelect = +req.query.id

@@ -1,5 +1,6 @@
 import AnswersModel from "./answer"
 import { Randomize } from "@/functions/arrays"
+
 export default class QuestionModel {
     #id: number
     #statement: string
@@ -30,6 +31,12 @@ export default class QuestionModel {
         return this.#acertou
     }
 
+
+    get notRespondida() {
+        return !this.respondida
+    }
+
+
     get respondida() {
         for (let res of this.#answers) {
             if (res.revealed) return true
@@ -55,6 +62,10 @@ export default class QuestionModel {
         return new QuestionModel(this.#id, this.#statement, randomizedAnswers, this.#acertou)
     }
 
+    static createFromObject(obj: QuestionModel): QuestionModel {
+        const answers = obj.answers.map(res => AnswersModel.createFromObject(res))
+        return new QuestionModel(obj.id, obj.statement, answers, obj.acertou)
+    }
 
     toObject() {
         return {

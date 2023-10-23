@@ -55,7 +55,7 @@ export default function Home() {
 
 
   function goToNext() {
-    const nextId = nextQuestionId()
+    const nextId = Number(nextQuestionId())
     nextId ? goToNextQuestion(nextId) : finish()
   }
 

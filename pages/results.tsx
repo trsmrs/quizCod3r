@@ -5,19 +5,19 @@ import { useRouter } from "next/router"
 import Button from '@/components/Button'
 
 export default function Result() {
-    const router = useRouter()
+    const Userouter = useRouter()
     const [colorP, setColorP] = useState('')
 
 
-    const total = Number(router.query.total)
-    const corrects = Number(router.query.corrects)
+    const total = Number(Userouter.query.total)
+    const corrects = Number(Userouter.query.corrects)
     const percent = Math.round((corrects / total) * 100)
 
 
     useEffect(() => {
 
         setColors()
-        console.log(percent)
+       
     }, [percent])
 
     function setColors() {

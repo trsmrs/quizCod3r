@@ -4,7 +4,7 @@ import style from '@/styles/Results.module.css'
 import { useRouter } from "next/router"
 import Button from '@/components/Button'
 
-export default function result() {
+export default function Result() {
     const router = useRouter()
     const [colorP, setColorP] = useState('')
 

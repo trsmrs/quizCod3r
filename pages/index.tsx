@@ -3,7 +3,7 @@ import QuestionModel from "@/model/question";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-const BASE_URL = "https://quiz-cod3r-git-main-trsmrs.vercel.app/api"
+const BASE_URL = "https://quiz-cod3r-trsmrs.vercel.app/api"
 
 export default function Home() {
   const router = useRouter()
